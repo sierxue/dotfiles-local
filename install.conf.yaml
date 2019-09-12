@@ -1,0 +1,23 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+
+- clean: ['~', '~/.config']
+
+- link:
+    ~/.R/snippets/markdown.snippets: R/snippets/markdown.snippets
+    ~/.config/zathura: config/zathura
+    ~/.dotfiles_local: ''
+    ~/.gitconfig_local:
+    ~/.gvimrc:
+    ~/.shell_local_after:
+    ~/.shell/aliases_local.sh: shell/aliases_local.sh
+    ~/.ssh/config: ssh/config
+    ~/.vim/after/plugin/abolish.vim: vim/after/plugin/abolish.vim
+    ~/.vim/spell: vim/spell
+    ~/.vim/UltiSnips: vim/UltiSnips
+    ~/texmf:
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]

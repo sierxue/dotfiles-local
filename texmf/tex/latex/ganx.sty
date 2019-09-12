@@ -1,0 +1,71 @@
+% GG
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{dsfont}
+\usepackage{amsmath}
+\usepackage{epsfig}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{multirow}
+
+% Natbib setup for author-year style
+\usepackage{natbib}
+ \bibpunct[, ]{(}{)}{,}{a}{}{,}%
+ \def\bibfont{\small}%
+ \def\bibsep{\smallskipamount}%
+ \def\bibhang{24pt}%
+ \def\newblock{\ }%
+ \def\BIBand{and}%
+
+% ganx packages and commands
+% \usepackage[includeheadfoot,top=20mm, bottom=20mm, footskip=2.5cm]{geometry}
+% \usepackage[includeheadfoot,left=15mm,right=15mm,top=20mm, bottom=20mm, footskip=2.5cm]{geometry}
+% https://tex.stackexchange.com/questions/54055/using-lower-case-roman-numerals-in-enumerate-lists
+% https://tex.stackexchange.com/a/58853/104838
+% \usepackage{enumerate}
+\usepackage[shortlabels]{enumitem}
+\usepackage{tabularx}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}% define horizotal centering Y
+\renewcommand\tabularxcolumn[1]{m{#1}}% for vertical centering text in X column
+
+% https://liam.page/2017/05/01/the-correct-way-to-use-differential-operator/
+\newcommand*{\dif}{\mathop{}\!\mathrm{d}}
+% https://readthelatexmanual.wordpress.com/2016/02/21/roman-numerals-in-latex/
+\newcommand{\RomanNumeralCaps}[1]
+    {\MakeUppercase{\romannumeral #1}}
+\newcommand{\romanNumeral}[1]
+    {\Makelowercase{\romannumeral #1}}
+
+% GG commands.
+\newtheorem{result}{Result}
+\renewcommand{\baselinestretch}{1.5}
+\newtheorem{Definition_}{Definition}
+\newtheorem{Result_}{Result}
+\newtheorem{Theorem_}{Theorem}
+\newtheorem{Proposition_}{Proposition}
+\newtheorem{Property_}{Property}
+\newtheorem{Remark_}{Remark}
+\newtheorem{Lemma_}{Lemma}
+\newtheorem{Corollary_}{Corollary}
+\newtheorem{Example_}{Example}
+\newcommand{\rd}{{\rm d}}
+\newcommand{\E}{{\mathds{E}}}
+\newcommand{\I}{{\mathds{I}}}
+\newcommand{\Z}{{\mathds{Z}}}
+\newcommand{\R}{{\mathds{R}}}
+
+%\newcommand{\Pr}{{\rm Pr}}
+\newcommand{\bea}{\begin{eqnarray}}
+\newcommand{\eea}{\end{eqnarray}}
+\newcommand{\bean}{\begin{eqnarray*}}
+\newcommand{\eean}{\end{eqnarray*}}
+\newenvironment{pf}{\vspace{0.1in}\noindent \textbf{Proof of}\!\! ~}{~
+\hspace*{\fill} $\square$ }
+\newenvironment{pfa}{\vspace{0.1in}\noindent \textbf{Proof.} ~}{~
+\hspace*{\fill} $\square$ }
+
+% \marginparwidth 0pt\marginparsep 0pt \topskip -0.1  pt\headsep
+% 0pt\headheight 0pt \oddsidemargin -0.in\evensidemargin 0pt
+% \textwidth 6.5in \topmargin 0pt\textheight 9in
+\newcommand{\commentout}[1]{}
