@@ -20,139 +20,13 @@ endglobal
 # Reserved letter: c, t, g, p.
 # Reserved letters:
 
-snippet 'dif "dif by ganx" wA
-\mathop{}\!\mathrm{d}
-endsnippet
-
-# https://tex.stackexchange.com/questions/54055/using-lower-case-roman-numerals-in-enumerate-lists
-# https://tex.stackexchange.com/a/58853/104838
-snippet enumr "Enumerate roman numbers)" bA
-\begin{enumerate}[label=\roman*)]
-	\item $0
-\end{enumerate}
-endsnippet
-
-snippet x0 "notation x>=0" w
-$${1:x}($1\ge0)$
-endsnippet
-
-##########
-#  Text  #
-##########
-
-snippet mn "margin note by ganx" iw
-\marginpar{${1:${VISUAL}}}$0
-endsnippet
-
-snippet sout "delete text by ganx" iw
-\sout{%
-${1:${VISUAL}}%
-}$0
-endsnippet
-
-snippet ul "underline text by ganx" iw
-\uline{%
-${1:${VISUAL}}%
-}$0
-endsnippet
-
-snippet uu "underline text double by ganx" iw
-\uuline{%
-${1:${VISUAL}}%
-}$0
-endsnippet
-
-snippet uw "uwave text by ganx" iw
-\uwave{%
-${1:${VISUAL}}%
-}$0
-endsnippet
-
-##################################
-#  Calculus (reserved letter: c  #
-##################################
-
-snippet 'ci "integral by ganx" iA
-\int_{${1:-\infty}}^{${2:}} ${3:${VISUAL}}\,{\rm d}$0
-endsnippet
-
-######################################
-#  Environment (reserved letter: e)  #
-######################################
-
-snippet ali "aligned envionment by ganx" bA
-\begin{aligned}
-	${1:${VISUAL}}
-\end{aligned}
-endsnippet
-
-snippet beg "begin{} / end{} by ganx" bA
-\\begin{$1}\label{$2}
-	$0
-\\end{$1}
-endsnippet
-
-snippet def "definition in elegantbook package by ganx" bA
-\\begin{definition}{$1}{$2}
-	$0
-\\end{definition}
-endsnippet
-
-snippet exa "example environment with option and label by ganx" b
-\begin{example}\label{ex:${1:}}
-	${0:${VISUAL}}
-\end{example}
-endsnippet
-
-snippet exe "exercise environment with option and label by ganx" b
-\begin{exercise}\label{exe:${1:}}
-	${0:${VISUAL}}
-\end{exercise}
-endsnippet
-
-snippet intro "introduction in elegantbook package by ganx" bA
-\\begin{introduction}[导读]
-	\item $1
-	\item $0
-\\end{introduction}
-endsnippet
-
-snippet lem "lemma in elegantbook package by ganx" bA
-\\begin{lemma}{$1}{$2}
-	$0
-\\end{lemma}
-endsnippet
-
-snippet note "note environment with option and label by ganx" b
-\begin{note}\label{note:${2:}}
-	${0:${VISUAL}}
-\end{note}
-endsnippet
-
-snippet sol "solution environment with option and label by ganx" b
-\begin{solution}\label{sol:${1:}}
-	${0:${VISUAL}}
-\end{solution}
-endsnippet
-
-snippet table "Table environment by ganx" b
-\begin{table}[${1:htpb}]
-	\centering
-	$0
-	\caption{${2:caption}}
-	\label{tab:${3:label}}
-\end{table}
-endsnippet
-
-snippet thm "theorem in elegantbook package by ganx" bA
-\\begin{theorem}{$1}{$2}
-	$0
-\\end{theorem}
-endsnippet
-
 ######################################################
 #  Text related auto-expansion (reserved letter: t)  #
 ######################################################
+
+snippet lz "\noindent\textbf{例15~~} by ganx" iA
+\noindent\textbf{例$1~~}~$0
+endsnippet
 
 snippet 'tq "quote text by ganx" iA
 \`\`${1:${VISUAL:text}}'' ${0}
@@ -164,7 +38,7 @@ endsnippet
 
 context "math()"
 snippet 'bf "boldface" iA
-\bf{${1:${VISUAL}}}${0}
+\mathbf{${1:${VISUAL}}}${0}
 endsnippet
 
 snippet 'mpit "math pi(theta) by ganx" iA
@@ -225,112 +99,6 @@ endsnippet
 snippet 'gz "zeta" iA
 \zeta
 endsnippet
-
-#####################################################
-#  Probability and Statistics (Reserved letter: p)  #
-#####################################################
-
-# Distribution
-snippet 'pcf "conditional prob. dist. fun by ganx" iA
-f(x|\theta)
-endsnippet
-
-snippet 'mpcf "math conditional prob. dist. fun by ganx" iwA
-$f(x|\theta)$
-endsnippet
-
-snippet 'pcF "conditional cumulative dist. fun by ganx" iA
-F(x|\theta)
-endsnippet
-
-snippet 'mpcF "math conditional cumulative dist. fun by ganx" iA
-$F(x|\theta)$
-endsnippet
-
-snippet 'mpp "math posterior dist. fun by ganx" iA
-$\pi(x|\theta)$
-endsnippet
-
-snippet 'pp "posterior dist. fun by ganx" iA
-\pi(x|\theta)
-endsnippet
-
-snippet 'mbi "binom{}{} by ganx" iA
-\binom{${1:n}}{${2:x}}$0
-endsnippet
-
-snippet 'pbi "Binomial distribution by ganx" iA
-\mathscr{B}(n,\theta)
-endsnippet
-
-snippet 'pn "Normal distribution by ganx" iA
-\mathscr{N}($1,$2)$0
-endsnippet
-
-#########################
-#  Terms in math & Stat #
-#########################
-
-snippet Bay "Bayesiain analysis"
-Bayesian analysis
-endsnippet
-
-snippet Lik "Likelihood Principle"
-Likelihood Principle 
-endsnippet
-
-snippet pos "posterior distribution"
-posterior distribution
-endsnippet
-
-snippet prid "prior distribution"
-prior distribution
-endsnippet
-
-snippet pri "prior information"
-prior information
-endsnippet
-
-snippet Pri "Prior information"
-Prior information
-endsnippet
-
-snippet samp "sample information"
-sample information
-endsnippet
-
-snippet Samp "Sample information"
-Sample information
-endsnippet
-
-#################
-#  expressions  #
-#################
-
-snippet 'am "AP order shceme" iA
-(Z,\hat{x})
-endsnippet
-
-snippet 'kc "$K$-convex" wA
-$K$-convex
-endsnippet
-
-snippet 'ky "$K$-convexity" wA
-$K$-convexity
-endsnippet
-
-snippet 'ly "$L(y)$" wA
-$L(y)$
-endsnippet
-
-snippet 'rf "Risk function R(\theta,\delta)" w
-R(\theta,\delta) 
-endsnippet
-
-snippet 'mrf "Risk function R(\theta,\delta)" w
-$R(\theta,\delta)$ 
-endsnippet
-
 #version 1 of the snippet from ~/dotfiles/vim/plugged/vim-snippets/snippets
 #PREAMBLE
 #newcommand
@@ -391,11 +159,11 @@ endsnippet
 # endsnippet
 # # Equation
 # # ttst
-# snippet eql "Labeled equation environment by ganx"
-# \begin{equation} \label{eq:${1}}
-# 	${0:${VISUAL}}
-# \end{equation}
-# endsnippet
+snippet eql "Labeled equation environment by ganx"
+\begin{equation} \label{eq:${1}}
+	${0:${VISUAL}}
+\end{equation}
+endsnippet
 # # Equation
 # snippet eq* "unnumbered equation environment"
 # 	\begin{equation*}
@@ -486,11 +254,11 @@ endsnippet
 # 	${0}
 # endsnippet
 # # Section
-# snippet sec "\section"
-# \section{${1:section name}}%
-# \label{sec:${2:$1}}
-# ${0}
-# endsnippet
+snippet sect "\section used by teaching slides by ganx"
+\section{${1:number}~~${2:section name}}
+
+${0}
+endsnippet
 # # Section without number
 # snippet sec* "\section*"
 # \section*{${1:section name}}%
@@ -588,14 +356,17 @@ endsnippet
 snippet bf "bold face text"
 \textbf{${1:${VISUAL:text}}}${0}
 endsnippet
+snippet bfc "bold face text"
+\textbf{${1:${VISUAL:text}}}~${0}
+endsnippet
 snippet under "underline text"
 \underline{${1:${VISUAL:text}}}${0}
 endsnippet
 snippet over "overline text"
 \overline{${1:${VISUAL:text}}}${0}
 endsnippet
-snippet emp "emphasize text"
-\emph{${1:${VISUAL:text}}}${0}
+snippet emp "emphasize text by ganx"
+\emph{${1:${VISUAL:text}}}~${0}
 endsnippet
 snippet sc "small caps text"
 \textsc{${1:${VISUAL:text}}}${0}
@@ -624,7 +395,12 @@ snippet mrak "mathfrak by ganx" iA
 endsnippet
 
 context "math()"
-snippet mscr "mathscr by ganx" iA
+snippet mbb "mathbb by ganx" iA
+\mathbb{$1}$0
+endsnippet
+
+context "math()"
+snippet ms "mathscr by ganx" iA
 \mathscr{$1}$0
 endsnippet
 
@@ -701,11 +477,6 @@ endsnippet
 # endsnippet
 # snippet lim "\lim_{}"
 # 	\lim_{${1:n \to \infty}} ${0}
-# endsnippet
-# snippet frame "frame environment"
-# 	\begin{frame}[${1:t}]{${2:title}}
-# 		${0:${VISUAL}}
-# 	\end{frame}
 # endsnippet
 # snippet block "block environment"
 # 	\begin{block}{${1:title}}

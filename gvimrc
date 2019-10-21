@@ -6,7 +6,7 @@ autocmd BufWritePost .gvimrc source %
 
 "" Settings of outlooks
 " 设置初始界面位置
-winpos 1 100
+"winpos 1 100
 
 " 设置初始界面大小
 " set lines=55 columns=84
