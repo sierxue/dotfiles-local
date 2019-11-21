@@ -25,7 +25,7 @@ alias vim='vim --servername vim'
 alias jn='jupyter notebook'
 alias python=python3
 # alias pip=pip3
-alias piu='pip3 install --user'
+alias piu='python3 -m pip install --user'
 
 # Open documents
 
@@ -56,6 +56,7 @@ alias gg_dot='cd ~/.df/dotfiles && git gui'
 alias gg_dotl='cd ~/.df/dotfiles-local && git gui'
 alias i_dotfiles='~/.df/dotfiles/install'
 alias i_dotfiles_local='~/.df/dotfiles-local/install'
+alias mc='make clean'
 alias shrink='sudo ~/Documents/tools/shrink.sh -y'
 alias so_v='source ~/.vimrc'
 alias so_z='source ~/.zshrc'
