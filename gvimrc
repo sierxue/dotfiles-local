@@ -47,3 +47,5 @@ set linespace=4
 " Cursor disappears in Gvim.
 " https://bugs.launchpad.net/ubuntu/+source/vim/+bug/616858
 set nomousehide
+" https://stackoverflow.com/a/3106477
+set guioptions-=L
