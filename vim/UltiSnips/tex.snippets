@@ -55,6 +55,30 @@ snippet frame "frame environment by ganx"
 $0
 endsnippet
 
+snippet iframe "iframe environment by ganx"
+\begin{iframe}[${1:c}]{${2:title}}
+	\begin{itemize}[<+- | alert@+>]
+		\item ${3:${VISUAL}}
+		\item $4
+		\item $5
+	\end{itemize}
+\end{iframe}
+
+$0
+endsnippet
+
+snippet oframe "oframe environment by ganx"
+\begin{oframe}[${1:c}]{${2:title}}
+	\begin{itemize}[<+- | alert@+>]
+		\item ${3:${VISUAL}}
+		\item $4
+		\item $5
+	\end{itemize}
+\end{oframe}
+
+$0
+endsnippet
+
 snippet hideit "hide text in a beamer presentation by ganx" bA
 \hideit{${1:${VISUAL}}}$0
 endsnippet
@@ -857,7 +881,7 @@ snippet 'am "AP order shceme by ganx" iA
 (Z,\hat{x}) 
 endsnippet
 
-snippet i= "$i=1,2,\ldots,n$ by ganx" wA
+snippet i== "$i=1,2,\ldots,n$ by ganx" wA
 $${1:i}=1,2,\ldots,${2:n}$$0
 endsnippet
 
@@ -889,11 +913,19 @@ endsnippet
 #  Text  #
 ##########
 
+snippet kqts "课前探索 by ganx" iA
+课前探索：$0
+endsnippet
+
+snippet ksjd "课上解答 by ganx" iA
+课上解答：$0
+endsnippet
+
 snippet kt "kaiti by ganx" iA
 ~{\kaiti ${1:${VISUAL}}}~$0
 endsnippet
 
-snippet ll "two newlines by ganx" iA
+snippet nll "two newlines by ganx" iA
 \\\\~\\\\$0
 endsnippet
 

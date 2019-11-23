@@ -1,0 +1,317 @@
+% \documentclass[13pt,handout]{beamer}
+% \documentclass[13pt,aspectratio=169]{beamer}
+% Add aspectratio=169 to make a 16:9 format. ganx@swufe
+
+% Add the support for Chinese and set the main font as KaiTi.  ganx@swufe
+%\usepackage{xeCJK} % Not needed with ctexbeamer.
+%\usepackage[AutoFakeBold, AutoFakeSlant]{xeCJK}
+%\usepackage{fontspec, xunicode, xltxtra}
+%\usepackage[T1]{fontenc}
+% From 一份(不太)简短的 L A TEX 2ε 介绍: fontenc 宏包是用来配合传统的 L A
+% TEX 字体的,如表 5.4 % 中的一些传统字体宏包。如果使用 xelatex
+% 编译方式,并使用 fontspec 宏包调用 % ttf 或 otf 格式字体,就不要再使用
+% fontenc 宏 包。使用表 5.4 %
+% 中的字体宏包之前最好查看一下宏包的帮助文档,了解使用方法和注意事项。
+%
+%\setCJKmainfont[ItalicFont={AR PL KaitiM GB}]{AR PL SungtiL GB}
+%\setCJKsansfont{AR PL KaitiM GB}
+%\setCJKmonofont{Noto Sans Mono CJK SC}
+\setCJKmainfont[BoldFont=FandolSong-Bold, ItalicFont=FandolKai-Regular]{FandolSong-Regular}
+% 如果设置 \setCJKsansfont, 则\textit{测试斜体}不显示为楷体。
+%\setCJKsansfont[BoldFont=FandolHei-Bold.otf]{FandolHei-Regular.otf}
+\setCJKmonofont{FandolFang-Regular.otf}
+%\setCJKmonofont{FandolKai-Regular.otf}
+\newCJKfontfamily\kaiti{FandolKai-Regular.otf}
+% NJU template
+%\setCJKmainfont{SimSun}
+%\setCJKsansfont{Microsoft YaHei} % or SimHei
+%\setCJKmonofont{KaiTi}
+
+% https://tex.stackexchange.com/questions/151549/mathscr-latex-or-xelatex
+\usepackage{mathrsfs}
+
+% Add agsm style. ganx@swufe
+\usepackage{natbib}
+
+\usepackage{setspace}  %  ganx@swufe
+
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+%\floatname{algorithm}{Ecorithm}
+\usepackage{booktabs}
+
+\usepackage{tabularx}
+
+% tex.stackexchange.com/a/395889/104838
+\usepackage{threeparttable}
+
+% tex.stackexchange.com/questions/23385; Looks like it is not necessary.
+% \setbeamertemplate{caption}[numbered]
+
+% tex.stackexchange.com/questions/201911 ganx@SWUFE
+\setbeamertemplate{theorems}[ams style]
+% tex.stackexchange.com/a/66672/104838
+\newtheorem{proposition}[theorem]{Proposition}
+
+% The default option is light, which can be dark. ganx@swufe
+\usetheme[background=light]{metropolis}
+
+%\usepackage[UTF8,scheme=plain]{ctex} % ganx@SWUFE: To get date in Chinese style
+\usepackage{appendixnumberbeamer}
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+\usepackage{xspace}
+
+\newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
+% https://tex.stackexchange.com/a/401885/104838
+\hypersetup{
+    colorlinks,
+    allcolors=.,
+    urlcolor=blue,
+}
+% Increase spaces between iterms https://tex.stackexchange.com/a/16796/104838
+% This change may cause nonworking of overlays [<+->] ganx@swufe
+% \let\tempone\itemize
+% \let\temptwo\enditemize
+% \renewenvironment{itemize}{\tempone\addtolength{\itemsep}
+% {0.5\baselineskip}}{\temptwo}
+
+% Change color of alert text to be black.
+% https://tex.stackexchange.com/q/9637/104838
+\setbeamercolor{alerted text}{fg=black}
+% Change color of alert text to be boldface.
+% https://tex.stackexchange.com/a/46136/104838
+\setbeamerfont{alerted text}{series=\bfseries}
+
+% https://tex.stackexchange.com/a/249958/104838
+\let\olditem\item
+\renewcommand{\item}{%
+\olditem\vspace{0.2cm}}
+%\olditem\vspace{\fill}} % the items are spread out to fill the slide
+
+% https://tex.stackexchange.com/a/272989/104838
+\let\oldfootnote\footnote
+\renewcommand\footnote[1][]{\oldfootnote[frame,#1]}
+
+% \< Center the title page. tex.stackexchange.com/questions/388873
+\makeatletter
+\setbeamertemplate{title page}{
+  \begin{minipage}[b][\paperheight]{\textwidth}
+    \centering
+    \ifx\inserttitlegraphic\@empty\else\usebeamertemplate*{title graphic}\fi
+    \vfill%
+    \ifx\inserttitle\@empty\else\usebeamertemplate*{title}\fi
+    \ifx\insertsubtitle\@empty\else\usebeamertemplate*{subtitle}\fi
+    \usebeamertemplate*{title separator}
+    \ifx\beamer@shortauthor\@empty\else\usebeamertemplate*{author}\fi
+    \ifx\insertdate\@empty\else\usebeamertemplate*{date}\fi
+    \ifx\insertinstitute\@empty\else\usebeamertemplate*{institute}\fi
+    \vfill
+    \vspace*{1mm}
+  \end{minipage}
+}
+
+\setbeamertemplate{title}{
+%  \raggedright%
+  \linespread{1.0}%
+  \inserttitle%
+  \par%
+  \vspace*{0.5em}
+}
+\setbeamertemplate{subtitle}{
+%  \raggedright%
+  \insertsubtitle%
+  \par%
+  \vspace*{0.5em}
+}
+\makeatother
+% Center the title page.\> https://tex.stackexchange.com/questions/388873
+% ganx@swufe
+
+%%% Section page template with picture https://tex.stackexchange.com/a/404243/104838
+\makeatletter
+\defbeamertemplate*{section page}{mytheme}[1][]{
+  \centering
+  \begin{minipage}{22em}
+    \raggedright
+    \usebeamercolor[fg]{section title}
+    \usebeamerfont{section title}
+    \insertsectionhead\\[-1ex]
+    \usebeamertemplate*{progress bar in section page}
+    \par
+    \ifx\insertsubsectionhead\@empty\else%
+      \usebeamercolor[fg]{subsection title}%
+      \usebeamerfont{subsection title}%
+      \insertsubsectionhead
+    \fi
+    \vskip0.5cm
+    \ifstrempty{#1}{}{%
+        \includegraphics[width=1.00\textwidth]{#1}%
+    }
+  \end{minipage}
+  \par
+  \vspace{\baselineskip}
+}
+\makeatother
+%%% Define a command to include picture in section,
+%%% make section, and revert to old template
+\newcommand{\sectionpic}[2]{
+   \setbeamertemplate{section page}[mytheme][#2]
+   \section{#1}
+   \setbeamertemplate{section page}[mytheme]
+}
+
+% https://tex.stackexchange.com/questions/266116/trying-to-hide-blocks-of-text-in-beamer
+\newcommand\hideit[1]{%
+\only<0| handout:1>{\mbox{}}%
+\invisible<0| handout:1>{#1}}
+
+%\begin{frame}[c]{汉字字体}
+%饭朵宋体；\textbf{饭朵宋体} \\
+%\textsf{饭朵黑体}；\textbf{饭朵黑体} \\
+%\texttt{饭朵仿宋体} \\
+%{\kaiti 饭朵楷体} \\
+%饭朵宋体 \textit{饭朵斜体}
+%\end{frame}
+
+\newenvironment{rframe}{\mybackground\begin{frame}}{\end{frame}}
+\newenvironment{sframe}{%
+  \mybackground
+  \colorlet{markcolor}{accent4}%
+  \backgroundmarklefttrue\backgroundmarkrighttrue
+  \begin{frame}
+}{\end{frame}}
+\ifdefined\slide
+  \setbeamertemplate{footline}[navigation]
+  \renewenvironment{rframe}{\begin{frame}<beamer:0>}{\end{frame}}%
+  \renewenvironment{sframe}{\begin{frame}<beamer:0>}{\end{frame}}%
+\fi
+\ifdefined\print
+  \renewenvironment{sframe}{\begin{frame}<handout:0>}{\end{frame}}%
+\fi
+% 用于标示只针对内招或外招的内容：iframe 为内招，oframe 为外招
+\newenvironment{iframe}{\begin{frame}}{\end{frame}}
+\newenvironment{oframe}{\begin{frame}}{\end{frame}}
+\newenvironment{jframe}{\begin{frame}}{\end{frame}}
+\newenvironment{pframe}{\begin{frame}}{\end{frame}}
+\def\myimode{i}
+\def\myomode{o}
+\ifx\slide\myimode
+  \renewenvironment{oframe}{\begin{frame}<presentation:0>}{\end{frame}}%
+  \renewenvironment{pframe}{\begin{frame}<presentation:0>}{\end{frame}}%
+  \renewenvironment{jframe}{\begin{frame}<presentation:0>}{\end{frame}}%
+\fi
+\ifx\slide\myomode
+  \renewenvironment{iframe}{\begin{frame}<presentation:0>}{\end{frame}}%
+  \renewenvironment{jframe}{\begin{frame}<presentation:0>}{\end{frame}}%
+  \renewenvironment{pframe}{\begin{frame}<presentation:0>}{\end{frame}}%
+\fi
+\ifx\print\myimode
+  \renewenvironment{oframe}{\begin{frame}<presentation:0>}{\end{frame}}%
+  \renewenvironment{pframe}{\begin{frame}<presentation:0>}{\end{frame}}%
+\fi
+\ifx\print\myomode
+  \renewenvironment{iframe}{\begin{frame}<presentation:0>}{\end{frame}}%
+  \renewenvironment{jframe}{\begin{frame}<presentation:0>}{\end{frame}}%
+\fi
+
+% 利用 tikzmark 作边注
+\newcommand{\imark}[1][gray]{%
+  \begin{tikzpicture}[overlay,remember picture]
+    \node[coordinate] (A) {};
+    \fill[color=#1] (current page.west |- A) rectangle +(1.2mm,0.6em);
+  \end{tikzpicture}%
+}
+\newcommand{\omark}[1][gray]{%
+  \begin{tikzpicture}[overlay,remember picture]
+    \node[coordinate] (A) {};
+    \fill[color=#1] (A -| current page.east) rectangle +(-1.2mm,0.6em);
+  \end{tikzpicture}%
+}
+\newcommand{\smark}{%
+  \imark[red]\omark[red]
+  % ganx Changes accent4 to red.
+  % message: Package pgf Error: Unsupported color model `hsb'. Sorry.
+}
+\newcommand{\itext}[1]{%
+  \ifx\slide\myomode\else
+    \ifx\print\myomode\else
+      #1%
+    \fi
+  \fi
+}
+\newcommand{\otext}[1]{%
+  \ifx\slide\myimode\else
+    \ifx\print\myimode\else
+      #1%
+    \fi
+  \fi
+}
+\newcommand{\stext}[1]{%
+  \ifdefined\slide\else
+    \ifdefined\print\else
+      #1%
+    \fi
+  \fi
+}
+
+% 选择题的答案
+\newcommand{\select}[1]{\qquad\stext{\llap{\makebox[2em]{\color{accent4}#1}}}}
+\newcommand{\pickout}[1]{\cdotfill\makebox{(\select{#1})}}
+
+%% 内外招同编号的定理，例子或练习等，需要将编号减一
+\newcommand{\minusone}[1]{%
+  \ifdefined\slide\else
+    \ifdefined\print\else
+      \addtocounter{#1}{-1}%
+    \fi
+  \fi
+}
+
+% ---------------------------
+% LaTeX 课件使用说明
+% ---------------------------
+%
+% 本课件利用一个主文件生成多份文档，适应不同需求，非常方便。
+%
+% 首先，不含 print 的文档用于演示，含 print 的文档用于打印。
+% 区别在于演示文档有动画暂停效果，而打印文档无动画暂停效果。
+%
+% 其次，为实现类似 PPT 的备注功能，教师和学生的文档有所区别。
+% 为适用于课前自学和课堂讲授两个不同的要求，两种文档也有差别。
+%
+% 因此，每章的目录里面，都会有六个 TeX 文件，分别介绍如下：
+%
+% lecture#.tex           主文件，包含全部的内容，用于教师备课
+% lecture#-print.tex     主文件对应的打印版文档，用于教师打印
+% lecture#-i.tex         高难度或内招生教学课件，用于课堂演示
+% lecture#-print-i.tex   高难度或内招生教学课件，用于学生打印
+% lecture#-o.tex         低难度或外招生教学课件，用于课堂演示
+% lecture#-print-o.tex   低难度或外招生教学课件，用于学生打印
+%
+% 除主文件外，其他文件都很简短，仅在改变某些参数后载入主文件。
+%
+% 在 LaTeX 文件中可以使用下面这些自定义的 frame 环境：
+%
+% - sframe 表示备注内容，因为它只出现在教师文档中。
+% - rframe 表示补充内容，不出现在课堂演示中，仅供学生课后学习。
+% - iframe 高难度或内招生独有的内容，在演示文档和打印文档都出现。
+% - jframe 高难度或内招生独有的补充内容，不出现在课堂演示中。
+% - oframe 低难度或外招生独有的内容，在演示文档和打印文档都出现。
+% - pframe 低难度或外招生独有的补充内容，不出现在课堂演示中。
+%
+%                        | iframe jframe oframe pframe rframe sframe
+% -----------------------|------------------------------------------
+% lecture#.pdf         演示 |   Y      Y      Y      Y      Y      Y
+% lecture#-print.pdf   打印 |   Y      Y      Y      Y      Y      Y
+% lecture#-i.pdf       演示 |   Y      N      N      N      N      N
+% lecture#-print-i.pdf 打印 |   Y      Y      N      N      Y      N
+% lecture#-o.pdf       演示 |   N      N      Y      N      N      N
+% lecture#-print-o.pdf 打印 |   N      N      Y      Y      Y      N
+%
+% 其中 Y 表示该 frame 环境出现在编译后的 PDF 中，而 N 表示不出现。
+%
+% 还有 iframe, oframe, rframe, sframe 对应的 \itext, \otext, \rtext, \stext 命令，
+% 分别表示页面中部分只出现在某些 PDF 中的内容，比如练习答案可以用 \stext 命令。
