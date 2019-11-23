@@ -43,3 +43,7 @@ source $VIMRUNTIME/menu.vim
 
 " 下划线不能正常显示：https://blog.csdn.net/aboboo5200/article/details/54424836
 set linespace=4
+
+" Cursor disappears in Gvim.
+" https://bugs.launchpad.net/ubuntu/+source/vim/+bug/616858
+set nomousehide
