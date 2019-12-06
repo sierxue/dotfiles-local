@@ -9,7 +9,6 @@
     ~/.R/snippets/markdown.snippets: R/snippets/markdown.snippets
     ~/.config/zathura: config/zathura
     ~/.dotfiles_local: ''
-    ~/.gitconfig_local:
     ~/.gvimrc:
     ~/.pip/pip.conf: pip/pip.conf
     ~/.shell_local_after:
