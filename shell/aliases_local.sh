@@ -36,6 +36,7 @@ alias piu='python3 -m pip install --user'
 # df.tex; df means demand forecasting.
 alias gv_df='gvim ~/repo/pac/df.tex'
 alias gv_invcost='gvim ~/repo/invCost/invCost-AP-order-stop.tex'
+alias gv_toolsRes='gvim ~/repo/toolsRes/toolsRes.tex'
 
 #############################
 #  Frequently edited files  #
@@ -60,7 +61,7 @@ alias mc='make clean'
 alias shrink='sudo ~/Documents/tools/shrink.sh -y'
 alias so_v='source ~/.vimrc'
 alias so_z='source ~/.zshrc'
-alias u_dotfiles='cd ~/.df && ./update_git_repos.sh'
+alias u_dotfiles='cd ~/.df/dotfiles-local/scripts && ./pullDotfiles.sh'
 alias u_vim_anywhere='~/.vim-anywhere/update'
 alias gv_vimrc='gvim ~/.vimrc'
 
