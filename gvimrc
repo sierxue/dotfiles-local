@@ -49,3 +49,5 @@ set linespace=3
 set nomousehide
 " https://stackoverflow.com/a/3106477
 set guioptions-=L
+
+source ~/.gvimrc_customized
