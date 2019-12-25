@@ -37,6 +37,7 @@ alias piu='python3 -m pip install --user'
 alias gv_df='gvim ~/repo/pac/df.tex'
 alias gv_invcost='gvim ~/repo/invCost/invCost-AP-order-stop.tex'
 alias gv_toolsRes='gvim ~/repo/toolsRes/toolsRes.tex'
+alias gv_ThesisSWUFE='gvim ~/repo/toolsRes/ThesisSWUFE.tex'
 
 #############################
 #  Frequently edited files  #
@@ -92,7 +93,7 @@ alias gv_ganx='gvim ~/.df/dotfiles-local/vim/UltiSnips/ganxtex.snippets'
 alias gv_test_snips='vim ~/.df/dotfiles-local/vim/UltiSnips/test_ultisnips.tex'
 alias gv_rmd='gvim ~/.df/dotfiles-local/vim/UltiSnips/rmd.snippets'
 alias gv_rmd2='gvim ~/.df/dotfiles-local/vim/UltiSnips/rmd2.snippets'
-alias gv_aliases='gvim ~/.shell/aliases_local.sh'
+alias gv_aliases='gvim ~/.df/dotfiles-local/aliases_local.sh'
 alias gv_dl='gvim /media/a/data4T/youtube-dl/youtube-dl.txt'
 
 
