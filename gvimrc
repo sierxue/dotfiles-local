@@ -9,7 +9,7 @@ autocmd BufWritePost .gvimrc source %
 "winpos 1 100
 
 " 设置初始界面大小
-" set lines=55 columns=84
+set lines=32 columns=84
 
 " gvim内部编码
 "set encoding=utf-8
