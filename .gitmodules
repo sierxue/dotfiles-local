@@ -3,7 +3,7 @@
 	url = https://github.com/anishathalye/dotbot
 [submodule "vim/UltiSnips"]
 	path = vim/UltiSnips
-	url = https://github.com/ddpom/UltiSnips.git
+	url = https://github.com/sierxue/UltiSnips.git
 [submodule "scripts"]
 	path = scripts
-	url = https://github.com/ddpom/scripts.git
+	url = https://github.com/sierxue/scripts.git
