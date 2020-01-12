@@ -50,4 +50,15 @@ set nomousehide
 " https://stackoverflow.com/a/3106477
 set guioptions-=L
 
-source ~/.gvimrc_customized
+" .vimrc_customized keeps settings specific to a computer.
+try
+  source ~/.vimrc_customized
+catch
+  " No such file? No problem; just ignore it.
+endtry
+
+try
+  source ~/.df/vimrc_customized
+catch
+  " No such file? No problem; just ignore it.
+endtry
