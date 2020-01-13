@@ -52,6 +52,12 @@ set guioptions-=L
 
 " .vimrc_customized keeps settings specific to a computer.
 try
+  source ~/.df/dotfiles-vm-u18/vimrc_customized
+catch
+  " No such file? No problem; just ignore it.
+endtry
+
+try
   source ~/.vimrc_customized
 catch
   " No such file? No problem; just ignore it.
