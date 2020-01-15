@@ -1,6 +1,7 @@
 [submodule "dotbot"]
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
+	ignore = dirty
 [submodule "vim/UltiSnips"]
 	path = vim/UltiSnips
 	url = https://github.com/sierxue/UltiSnips.git
